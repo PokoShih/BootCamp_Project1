@@ -33,6 +33,13 @@ body {
     padding-left: 3%;
   }
 
+  .menu {
+    height: 90px;
+    float: right;
+    padding-top: 50px;
+    padding-right: 3%;
+  }
+
   .cart {
     height: 90px;
     float: right;
@@ -133,7 +140,7 @@ body {
         align-content: space-around;
         padding:5%;
         margin: auto;
-        border-radius: 2px;
+        border-radius: 10px;
       }
 
       header {
@@ -150,6 +157,13 @@ body {
       }
 
       .cart {
+        height: 80px;
+        float: right;
+        padding-top: 40px;
+        padding-right: 3%;
+      }
+
+      .menu {
         height: 80px;
         float: right;
         padding-top: 40px;
