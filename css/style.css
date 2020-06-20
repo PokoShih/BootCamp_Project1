@@ -1,3 +1,5 @@
+/* Main Styles for every page */
+
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 120%;
@@ -50,7 +52,7 @@ body {
     align-content: space-around;
     padding:5%;
     margin: auto;
-    border-radius: 2px;
+    border-radius: 10px;
   }
 
   h1 {
@@ -69,7 +71,58 @@ body {
     display: none;
 }
 
+/* Menu Items */
+.menuRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.796);
+    border-radius: 5px;
+}
 
+.menuText {
+    padding-right: 10px;
+}
+
+.menuTitle {
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.menuImg {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+}
+
+.menuPrice {
+    text-align: right;
+}
+
+.menuTxt {
+    font-size: 60%;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.itemiser {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 10px;
+}
+
+.digit {
+    margin-right: 5px;
+    font-size: 120%;
+}
+
+/* Screen size Modifications */
 
 @media only screen and (max-width: 768px) {
 
