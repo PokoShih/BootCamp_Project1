@@ -81,7 +81,7 @@ $("#gradNutrition").on("click", function (event) {
         url: queryURL,
         method: "POST",
         contentType: "application/json",
-        data: {
+        data: JSON.stringify({
             "title": "cheeseburger",
             "yield": "1 serving",
             "ingr": ["1 hamburger bun",
@@ -89,9 +89,18 @@ $("#gradNutrition").on("click", function (event) {
                 "1 oz cheese",
                 "1 oz mustard",
                 "1 oz tomato sauce"],
-        },
+        }),
     }).then(function (response) {
-        console.log(response);
+        var calories = response.totalNutrientsKCal.ENERC_KCAL.quantity;
+        var carbs = response.totalNutrientsKCal.CHOCDF_KCAL.quantity;
+        // carbs kcal
+        var fat = response.totalNutrientsKCal.FAT_KCAL.quantity;
+        // kcal
+        var protein = response.totalNutrientsKCal.PROCNT_KCAL.quantity;
+        console.log(response, calories, carbs, fat, protein);
+        $("#gradNutrition").empty();
+        var NutritionSheet = "<div class='newDivNutrition'> <li> Calories: " + calories + "KCAL</li> <li>Carbs: " + carbs + "KCAL</li> <li>Fat: " + fat + "KCAL</li> <li>Protein: " + protein + "KCAL</li>" + "</div>";
+        $("#gradNutrition").append(NutritionSheet);
     });
 });
 
