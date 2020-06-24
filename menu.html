@@ -9,9 +9,7 @@
     <!-- Food App Styles -->
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <!-- Font Style -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
-
-    
+    <link rel="stylesheet" type="text/css" href="./https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
 </head>
 <body>
     <!-- Header navigation between index home and the cart -->
@@ -20,6 +18,7 @@
             <section class="container" id="nav">
                 <a href="index.html"><img src="./images/JPF (1).png" alt="JPF Burgers" class="logo" id="logo"></a>
                 <a href="checkout.html"><img src="./images/cart.png" alt="Go to Cart" class="cart" id="cart"></a>
+                <a href="menu.html"><img src="./images/menu.png" alt="Menu" class="menu" id="menu"></a>
             </section>
         </nav>
     </header>
@@ -27,23 +26,28 @@
     <section class="main">
         <section class="content-box" id="content-box">
             <h1>Menu</h1>
-            <div class="div">
-                <img src="images/menu0.png">
-                <button id="addIten">+</button>
-                <button id="minusIten">-</button>
-                <button id="gradNutrition">Nutrition Chart</button>
-            </div>
-
-
             <!-- Add your Dynamic HTML with Javascript below HERE -->
+            <section class="menuRow" id="">
+                <div class="menu-item">
+                    <img src="./images/menu0.png" alt="Cheeseburger" class="menuImg">
+                    <div class="menuText">
+                        <h2 class="menuTitle">Cheeseburger</h2>
+                        <p class="menuTxt">Grass-fed beef patty, cheese, mustard and tomato sauce in our signature bun.
+                        </p>
+                        <h2 class="menuPrice">$10.00</h2>
+                    </div>
+                </div>
+                <div class="itemiser">
+                    <h2 class="plus digit">+</h2>
+                    <h2 class="itemCount digit">0</h2>
+                    <h2 class="minus">-</h2>
+                </div>
+            </section>
 
+            
         </section>
     </section>
-
     
-    
+    <script src="script.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="script.js"></script>
-
 </html>

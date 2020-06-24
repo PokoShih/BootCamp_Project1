@@ -1,111 +1,173 @@
+/* Main Styles for every page */
+
 body {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 120%;
-    background-color:rgb(255, 255, 255);
-    background-image: url("../images/background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    line-height: 120%;
-  }
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 120%;
+  background-color:rgb(255, 255, 255);
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  line-height: 120%;
+}
 
-  a {
-    color: #000000;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-  header {
-    width: 100%;
-    height: 100px;
-    position: sticky;
-  }
+header {
+  width: 100%;
+  height: 100px;
+  position: sticky;
+}
 
-  .logo {
-    height: 120px;
-    float: left;
-    padding-top: 20px;
-    padding-left: 3%;
-  }
+.logo {
+  height: 120px;
+  float: left;
+  padding-top: 20px;
+  padding-left: 3%;
+}
 
-  .cart {
-    height: 90px;
-    float: right;
-    padding-top: 50px;
-    padding-right: 3%;
-  }
+.menu {
+  height: 90px;
+  float: right;
+  padding-top: 50px;
+  padding-right: 3%;
+}
 
-  .main {
-    display: flex;
-    flex-direction: row;
-  }
+.cart {
+  height: 90px;
+  float: right;
+  padding-top: 50px;
+  padding-right: 3%;
+}
 
-  .content-box {
-    width: 50%;
-    height: 90%;
-    background-color: #f0ffc6;
-    align-content: space-around;
-    padding:5%;
-    margin: auto;
-    border-radius: 2px;
-  }
+.main {
+  display: flex;
+  flex-direction: row;
+}
 
-  h1 {
-      text-align: center;
-      font-size: 150%;
-      font-weight: 400;
-  }
+.content-box {
+  width: 50%;
+  height: 90%;
+  background-color: #f0ffc6;
+  align-content: space-around;
+  padding:5%;
+  margin: auto;
+  border-radius: 10px;
+}
 
-  h2 {
+h1 {
     text-align: center;
+    font-size: 150%;
     font-weight: 400;
-    margin-top: 2%;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 2%;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
-img{
-    background-color: white;
-    width: 200px;
-    height: 200px;
+/* Menu Items */
+.menuRow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.796);
+  border-radius: 5px;
 }
 
+.menuText {
+  padding-right: 10px;
+}
+
+.menuTitle {
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+.menuImg {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  padding: 10px;
+}
+
+.menuPrice {
+  text-align: right;
+}
+
+.menuTxt {
+  font-size: 60%;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.itemiser {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 10px;
+}
+
+.digit {
+  margin-right: 5px;
+  font-size: 120%;
+}
+
+/* Screen size Modifications */
 
 @media only screen and (max-width: 768px) {
 
-    .content-box {
-        width: 80%;
-        height: 90%;
-        background-color: #f0ffc6;
-        align-content: space-around;
-        padding:5%;
-        margin: auto;
-        border-radius: 2px;
-      }
+  .content-box {
+      width: 80%;
+      height: 90%;
+      background-color: #f0ffc6;
+      align-content: space-around;
+      padding:5%;
+      margin: auto;
+      border-radius: 10px;
+    }
 
-      header {
-        width: 100%;
-        height: 100px;
-        position: sticky;
-      }
-    
-      .logo {
-        height: 100px;
-        float: left;
-        padding-top: 15px;
-        padding-left: 3%;
-      }
+    header {
+      width: 100%;
+      height: 100px;
+      position: sticky;
+    }
+  
+    .logo {
+      height: 100px;
+      float: left;
+      padding-top: 15px;
+      padding-left: 3%;
+    }
 
-      .cart {
-        height: 80px;
-        float: right;
-        padding-top: 40px;
-        padding-right: 3%;
-      }
+    .cart {
+      height: 80px;
+      float: right;
+      padding-top: 40px;
+      padding-right: 3%;
+    }
 
-  }
+    .menu {
+      height: 80px;
+      float: right;
+      padding-top: 40px;
+      padding-right: 3%;
+    }
+
+}
