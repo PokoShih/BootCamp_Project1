@@ -21,6 +21,8 @@
             <section class="container" id="nav">
                 <a href="index.html"><img src="./images/JPF (1).png" alt="JPF Burgers" class="logo" id="logo"></a>
                 <a href="checkout.html"><img src="./images/cart.png" alt="Go to Cart" class="cart" id="cart"></a>
+                <a href="menu.html"><img src="./images/menu.png" alt="Menu" class="menu" id="menu"></a>
+                <a href="sign-in.html"><img src="./images/login.jpeg" alt="Go to Cart" class="cart" id="cart"></a>
             </section>
         </nav>
     </header>
@@ -160,10 +162,6 @@
                 var code = e.which || e.keyCode;
                 console.log("code " + code);
                 if (code == '38') {
-                    // Up
-                    //for (i = 0; i < onselectlength; i++) {
-                    //    $('div[data-index='+ i +']').toggleClass('active', i === keycount);
-                    //}
                     clearbackground();
                     console.log("key up " + keycount);
 
@@ -173,10 +171,6 @@
                 } else if (code == '40') {
                     // down
                     console.log("testing 1");
-                    //for (i = 0; i < onselectlength; i++) {
-                    //    $('div[data-index='+ i +']').toggleClass('active', i === keycount);
-                    //    console.log("testing 2 " + i + " " + keycount);
-                    //}
                     clearbackground();
                     console.log("key down " + keycount);
                     if (keycount < (onselectlength - 1)){
