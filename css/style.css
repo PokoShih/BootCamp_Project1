@@ -70,12 +70,47 @@ body {
 
   h2 {
     text-align: center;
+    font-size: 150%;
     font-weight: 400;
-    margin-top: 2%;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 2%;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+
+/* Menu Items */
+.menuRow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.796);
+  border-radius: 5px;
+}
+
+.menuText {
+  padding-right: 10px;
+}
+
+.menuTitle {
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+.menuImg {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  padding: 10px;
 }
 
 /* Menu Items */

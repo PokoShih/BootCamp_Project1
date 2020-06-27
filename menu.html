@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,10 @@
     <!-- Food App Styles -->
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <!-- Font Style -->
-    <link rel="stylesheet" type="text/css" href="./https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
 </head>
+
 <body>
     <!-- Header navigation between index home and the cart -->
     <header>
@@ -32,22 +35,130 @@
                     <img src="./images/menu0.png" alt="Cheeseburger" class="menuImg">
                     <div class="menuText">
                         <h2 class="menuTitle">Cheeseburger</h2>
-                        <p class="menuTxt">Grass-fed beef patty, cheese, mustard and tomato sauce in our signature bun.
+                        <p class="menuTxt">Grass-fed beef patty, cheese, mustard and tomato sauce in our signature
+                            bun.
                         </p>
                         <h2 class="menuPrice">$10.00</h2>
                     </div>
                 </div>
                 <div class="itemiser">
-                    <h2 class="plus digit">+</h2>
-                    <h2 class="itemCount digit">0</h2>
-                    <h2 class="minus">-</h2>
+                    <!-- <button class="plus digit" id="plus0">+</button> -->
+                    <input type="number" id="input0" value="0" min="0">
+                    <button id="gradNutrition0">Nutrition Sheet</button>
+                    <!-- <button class="minus" id="minus0">-</button> -->
                 </div>
             </section>
 
-            
+            <section class="menuRow" id="">
+                <div class="menu-item">
+                    <img src="./images/menu1.png" alt="Lot Burger" class="menuImg">
+                    <div class="menuText">
+                        <h2 class="menuTitle">Lot Burger</h2>
+                        <p class="menuTxt">Grass-fed beef patty, cheese, mustard, mayo, tomato sauce, tomato,
+                            lettuce and pickles in our signature bun.
+                        </p>
+                        <h2 class="menuPrice">$12.90</h2>
+                    </div>
+                </div>
+                <div class="itemiser">
+                    <input type="number" id="input1" value="0" min="0">
+                    <button id="gradNutrition1">Nutrition Sheet</button>
+                </div>
+            </section>
+
+            <section class="menuRow" id="">
+                <div class="menu-item">
+                    <img src="./images/menu2.png" alt="FriedChickenBurger1" class="menuImg">
+                        <div class="menuText">
+                            <h2 class="menuTitle">FriedChickenBurger1</h2>
+                            <p class="menuTxt">Grilled chicken breast or fried chicken thigh, tom-oli sauce and slaw in
+                                our signature bun.
+                            </p>
+                            <h2 class="menuPrice">$14.50</h2>
+                        </div>
+                    </div>
+                        <div class="itemiser">
+                            <input type="number" id="input2" value="0" min="0">
+                            <button id="gradNutrition2">Nutrition Sheet</button>
+                        </div>
+                    
+            </section>
+
+            <section class="menuRow" id="">
+                <div class="menu-item">
+                        <img src="./images/menu3.png" alt="FriedChickenBurger2" class="menuImg">
+                        <div class="menuText">
+                            <h2 class="menuTitle">FriedChickenBurger2</h2>
+                            <p class="menuTxt">Grilled chicken breast or fried chicken thigh, slaw, sriracha mayo and
+                                Handsome Devils Co hot sauce in our signature bun.
+                            </p>
+                            <h2 class="menuPrice">$16.00</h2>
+                        </div>
+                    </div>
+                        <div class="itemiser">
+                            <input type="number" id="input3" value="0" min="0">
+                            <button id="gradNutrition3">Nutrition Sheet</button>
+                        </div>
+            </section>
+
+            <section class="menuRow" id="">
+                <div class="menu-item">
+
+                        <img src="./images/menu4.png" alt="VeganBurger" class="menuImg">
+                        <div class="menuText">
+                            <h2 class="menuTitle">Vegan Burger</h2>
+                            <p class="menuTxt">Spicy bean and quinoa patty, jalapeños, sriracha mayo, cheese, mustard,
+                                tomato sauce, tomato, lettuce and pickles in our signature bun.
+                            </p>
+                            <h2 class="menuPrice">$15.00</h2>
+                        </div>
+                    </div>
+                        <div class="itemiser">
+                            <input type="number" id="input4" value="0" min="0">
+                            <button id="gradNutrition4">Nutrition Sheet</button>
+                    </div>
+            </section>
+
+            <section class="menuRow" id="">
+                <div class="menu-item">
+
+                        <img src="./images/menu5.png" alt="Chips" class="menuImg">
+                        <div class="menuText">
+                            <h2 class="menuTitle">Chips</h2>
+                            <p class="menuTxt">Choice of salt, chicken salt, or dill salt.
+                            </p>
+                            <h2 class="menuPrice">$5.50</h2>
+                        </div>
+                    </div>
+                        <div class="itemiser">
+                            <input type="number" id="input5" value="0" min="0">
+                            <button id="gradNutrition5">Nutrition Sheet</button>
+                        </div>
+            </section>
+
+            <section class="menuRow" id="">
+                <div class="menu-item">
+                        <img src="./images/menu6.png" alt="SoftDrink" class="menuImg">
+                        <div class="menuText">
+                            <h2 class="menuTitle">Can Soft Drink</h2>
+                            <p class="menuTxt">Choice of Coke, Coke No Sugar, Sprite or Fanta.
+                            </p>
+                            <h2 class="menuPrice">$3.90</h2>
+                        </div>
+                    </div>
+                        <div class="itemiser">
+                            <input type="number" id="input6" value="0" min="0">
+                            <button id="gradNutrition6">Nutrition Sheet</button>
+                        </div>
+            </section>
+
+
+
         </section>
     </section>
-    
-    <script src="#"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/NutritionApi.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
+
 </html>
