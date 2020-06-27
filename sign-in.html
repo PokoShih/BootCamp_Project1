@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPF Burgers</title>
+    <!-- Reset stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <!-- Food App Styles -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <!-- Font Style -->
+    <link rel="stylesheet" type="text/css"
+        href="./https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
+</head>
+
+<body>
+    <!-- Header navigation between index home and the cart -->
+    <header>
+        <nav>
+            <section class="container" id="nav">
+                <a href="index.html"><img src="./images/JPF (1).png" alt="JPF Burgers" class="logo" id="logo"></a>
+                <a href="checkout.html"><img src="./images/cart.png" alt="Go to Cart" class="cart" id="cart"></a>
+            </section>
+        </nav>
+    </header>
+    <!-- Main content to be added in the content-box with JavaScript -->
+    <section class="main">
+        <section class="content-box flex-container" id="content-box">
+            <h1>Log in</h1>
+            <h2><a href="account-form.html">or Create an Account</a></h2>
+            <!-- Add your Dynamic HTML with Javascript below HERE -->
+           <!-- <form class="flex-container">-->
+                <div class="flex-container">
+
+                    <label for="Name"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" id="email" class="formrow" equired>
+
+                    <input type="password" placeholder="Password" name="psw" id="psw" class="formrow">
+                    <hr>
+
+                    <button type="button" class="registerbtn">Log in</button>
+                </div>
+        </section>
+    </section>
+<!--    </form>-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(document).on("click", ".registerbtn", ValidatePassword);
+            var cuser = {};
+            var pword;
+
+            function ValidatePassword() {
+
+                var ps1 = $("#psw").val();
+                var email = $("#email").val();
+
+                console.log("VARIABLES:  " + "email " + email + " password " + password);
+
+                //validate
+
+                var password = retrieve(email);
+                if (password === "false") {
+                    alert("Account doesnt exist or incorrect password.");
+                    return;
+                } else {
+                    if (password !== ps1) {
+                        alert("Account doesnt exist or incorrect password.");
+                        return;
+                    } else {
+                        cuser.email = email;
+                        cuser.epoch = now = Date.now();
+                        store();
+                    }
+                }
+            }
+
+            function retrieve(account) {
+                var backJSON = localStorage.getItem(account);
+                var obj = JSON.parse(backJSON);
+                console.log("retrieve = " + obj.password);
+                if (obj.password) {
+                    return obj.password;
+                } else {
+                    return "false";
+                }
+            }
+
+            function store() {
+                localStorage.setItem("currentuser", JSON.stringify(cuser));
+            }
+
+        });
+    </script>
+</body>
+
+</html>

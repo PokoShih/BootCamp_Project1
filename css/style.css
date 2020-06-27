@@ -206,3 +206,39 @@ h2 {
       }
 
   }
+    .auto-complete-div{
+        background-color: white;
+        font-size: small;
+        font-style: normal;
+      border-color: black;
+        border-width: 20px;
+      }
+
+      .auto-complete-cont{
+        border-width: 0.05px;
+        border-style: solid
+      }
+
+      .auto-complete-select{
+        background-color: white;
+        font-size: small;
+        font-style: normal;
+
+      }
+      .auto-complete-list{
+        background-color: white;
+        font-size: small;
+        font-style: normal;
+        border-width: 20px;
+        padding-left: 3px;
+       
+
+      }
+      .auto-complete-list.active {
+        background-color: #E1EBF4;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+      }
