@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPF Burgers</title>
+    <!-- Reset stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <!-- Food App Styles -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <!-- Font Style -->
+    <link rel="stylesheet" type="text/css"
+        href="./https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap">
+</head>
+
+<body>
+    <!-- Header navigation between index home and the cart -->
+    <header>
+        <nav>
+            <section class="container" id="nav">
+                <a href="index.html"><img src="./images/JPF (1).png" alt="JPF Burgers" class="logo" id="logo"></a>
+                <a href="checkout.html"><img src="./images/cart.png" alt="Go to Cart" class="cart" id="cart"></a>
+            </section>
+        </nav>
+    </header>
+    <!-- Main content to be added in the content-box with JavaScript -->
+    <section class="main">
+        <section class="content-box" id="content-box">
+            <h1>Register</h1>
+            <h2><a href="sign-in.html">or Sign in</a></h2>
+            <!-- Add your Dynamic HTML with Javascript below HERE -->
+            <form action="action_page.php">
+                <div class="flex-container">
+
+
+                    <label for="Name"><b>Name</b></label>
+                    <input type="text" placeholder="Enter Name" name="name" id="Name">
+
+                    <label for="Name"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+                    <label for="Name"><b>Address</b></label>
+                    <div class="flex-container auto-complete-cont">
+
+                        <input class="auto-complete-form" id="address" type="text" placeholder="Enter Name"
+                            name="Address">
+                        <div class="auto-complete-select">
+
+                        </div>
+                    </div>
+                    <label for="Name"><b>Suburb</b></label>
+                    <input type="text" placeholder="Suburb" name="Suburb" id="suburb">
+
+                    <label for="Name"><b>State</b></label>
+                    <input type="text" placeholder="State" name="state" id="state">
+
+                    <label for=" Name"><b>Postcode</b></label>
+                    <input type="text" placeholder="Postcode" name="postcode" id="postcode">
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw">
+
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat">
+                    <label for="psw"><b></b></label>
+                    <br>
+                    <button type="button" class="registerbtn">Register</button>
+                </div>
+
+                <div class="container signin">
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(document).on("click", ".registerbtn", ValidateForm);
+            //$(document).on("click", ".searchbtn", searchAddress);
+            //$(document).on("keypress", "#address", searchAddress);
+            //$(document).on("change", ".auto-complete-select", autoComplete);
+
+            var user = {};
+            var cuser = {};
+            var keycount;
+            var onselectlength;
+
+//            function autoComplete() {
+ //               console.log("selected ");
+  //          }
+
+            function ValidateForm() {
+
+                var ps1 = $("#psw").val();
+                var ps2 = $("#psw-repeat").val();
+                var email = $("#email").val();
+                var postcode = $("#postcode").val();
+                var address = $("#address").val();
+                var state = $("#state").val();
+
+                console.log("VARIABLES: address " + address + " email " + email + " postcode " + postcode + " state " + state);
+
+                //validate
+                if (ps1 !== ps2) {
+                    alert("passwords do not match.");
+                }
+                if (ps1.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/g)) {
+                    console.log("password passed match.");
+                } else {
+                    alert("Password must be 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character");
+                    return;
+                }
+                if (email.match(/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/g)) {
+                    console.log("Email is ok.");
+                } else {
+                    console.log("Email is not ok.");
+                    alert("Not a valid email address.");
+                    return;
+                }
+                user = {
+                    address: address,
+                    postcode: postcode,
+                    state: state,
+                    password: ps1,
+                }
+                cuser.email = email;
+                cuser.epoch = Date.now();
+                store(email);
+            }
+
+            function store(label) {
+                localStorage.setItem(label, JSON.stringify(user));
+                localStorage.setItem("currentuser", JSON.stringify(cuser));
+            }
+            
+            // event handlers
+
+            $(document).on("mouseenter", ".auto-complete-list", function () {
+                console.log("mouse enter");
+                $(this).css('background', '#E1EBF4');
+                keycount = $(this).attr("data-index");
+                console.log("pf key " + keycount);
+                clearbackground();
+            }).on("mouseleave", ".auto-complete-list", function () {
+                $(this).css('background', '');
+                console.log("mouse leave");
+                clearbackground();
+            });
+
+            $(document).on("click", ".auto-complete-list", function () {
+                console.log(this);
+                $(this).css('background', '#E1EBF4');
+
+            })
+
+            $(".auto-complete-form").on("keydown", function (e) {
+                var code = e.which || e.keyCode;
+                console.log("code " + code);
+                if (code == '38') {
+                    // Up
+                    //for (i = 0; i < onselectlength; i++) {
+                    //    $('div[data-index='+ i +']').toggleClass('active', i === keycount);
+                    //}
+                    clearbackground();
+                    console.log("key up " + keycount);
+
+                    if (keycount > 0){
+                        keycount = keycount - 1;
+                    }
+                } else if (code == '40') {
+                    // down
+                    console.log("testing 1");
+                    //for (i = 0; i < onselectlength; i++) {
+                    //    $('div[data-index='+ i +']').toggleClass('active', i === keycount);
+                    //    console.log("testing 2 " + i + " " + keycount);
+                    //}
+                    clearbackground();
+                    console.log("key down " + keycount);
+                    if (keycount < (onselectlength - 1)){
+                        keycount++;
+                    } 
+                } else if (code == '13'){
+                   console.log("hit enter");
+                   var rowentry = $('div[data-index='+ keycount +']').text();
+                   console.log("rowentry " + rowentry + " keycount " + keycount);
+                   rendorform(rowentry);
+
+                } else {
+                    searchAddress();
+                }
+            }) 
+
+
+            function clearbackground(){
+                for (i = 0; i < onselectlength; i++) {
+                    $('div[data-index='+ i +']').toggleClass('active', i === keycount);
+                }
+            }
+
+            function rendorform (passedAddress){
+                
+                var comdel = passedAddress.split(",");
+                var result = comdel[1].split(" ");
+                $("#postcode").val(result[(result.length -1)]);
+                $("#address").val(comdel[0]);
+                $("#state").val(result[(result.length - 2)]);
+                console.log("res = " + result);
+                if (result.length > 3){
+                    var text = (result[1] + " " + result[2]);
+                    $("#suburb").val(text);
+                } else {
+                    $("#suburb").val(result[0]);
+                }
+                var autoCompleteSelect = $(".auto-complete-select");
+                $(autoCompleteSelect).empty();
+                keycount = 0;
+            }
+
+            $(document).on("click", ".auto-complete-list", function () {
+                console.log(this);
+               // $(this).css('background', '#E1EBF4');
+                keycount = $(this).attr("data-index");
+                console.log("New key count " + keycount)
+                var rowentry = $('div[data-index='+ keycount +']').text();
+                rendorform(rowentry);
+            })
+
+            function searchAddress() {
+                keycount = 0;
+                console.log("test 2");
+                var q = $(".auto-complete-form").val();
+                console.log("testing " + q)
+                q = encodeURIComponent(q.trim());
+                console.log("q " + q);
+                var state = $("#state").val();
+                var postcode = $("#postcode").val();
+                var autoCompleteSelect = $(".auto-complete-select");
+
+                queryURL = "https://api.addressfinder.io/api/au/address/autocomplete?key=PBURVJ8MLECKD7G9TQ6A&q=" + q + "&secret=7FHWL6BXDANURGQ8Y9VC&format=json";
+                console.log("queryurl = " + queryURL);
+                $.ajax({
+                    url: queryURL,
+                    method: "GET",
+                }).then(function (response) {
+                    console.log(response);
+                    var s = $('<div />');
+                    $(autoCompleteSelect).empty();
+                    onselectlength = response.completions.length;
+                    for (i = 0; i < response.completions.length; i++) {
+                        console.log("test " + response.completions[i].full_address);
+                        $('<div />', { class: "auto-complete-list", id: "addressevent", text: response.completions[i].full_address, "data-index": i }).appendTo(s);
+                    }
+                    s.appendTo(autoCompleteSelect);
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
