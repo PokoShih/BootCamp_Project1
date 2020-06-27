@@ -41,17 +41,68 @@
                         <h2 class="menuPrice">$10.00</h2>
                     </div>
                 </div>
+
                 <div class="itemiser">
                     <h2 class="plus digit">+</h2>
                     <h2 class="itemCount digit">0</h2>
                     <h2 class="minus">-</h2>
                 </div>
-            </section>
 
+        </section>
+            <br>
+            <div class="contact-container">
+
+
+
+
+            </div>
         </section>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/js/checkout.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var obj = {};
+            var obj_current = {};
+            var obj_details = {};
+
+            var loggedin = retrieve("currentuser");
+            if (loggedin = false) {
+                console.log("no logged in user");
+            } else {
+                obj_current = obj;
+                retrieve(obj_current.email);
+                obj_details = obj;
+                console.log("pass =" + obj_details.password);
+                var el = $("<div>");
+                el.addClass("checkout-order");
+                el.text("Customer name: " + obj_details.name);
+                $(".contact-container").append(el);
+                var address = $("<div>");
+                address.addClass("checkout-order");
+                address.text("Customer Addres: " + obj_details.address + " " + obj_details.suburb + " " + obj_details.postcode + " " + obj_details.state);
+                $(".contact-container").append(address);
+
+            }
+
+            function retrieve(account) {
+                var backJSON = localStorage.getItem(account);
+                obj = JSON.parse(backJSON);
+                console.log("retrieve = " + obj.email);
+                if (obj) {
+                    return;
+                } else {
+                    console.log("retrieve failed");
+                    return "false";
+                }
+            }
+
+
+        });
+
+
+
+    </script>
 </body>
 
 </html>

@@ -103,6 +103,8 @@
                 var postcode = $("#postcode").val();
                 var address = $("#address").val();
                 var state = $("#state").val();
+                var name = $("#Name").val();
+                var suburb = $("#suburb").val();
 
                 console.log("VARIABLES: address " + address + " email " + email + " postcode " + postcode + " state " + state);
 
@@ -129,6 +131,9 @@
                     postcode: postcode,
                     state: state,
                     password: ps1,
+                    email: email,
+                    name: name,
+                    suburb: suburb,
                 }
                 cuser.email = email;
                 cuser.epoch = Date.now();
@@ -206,7 +211,7 @@
                 $("#state").val(result[(result.length - 2)]);
                 console.log("res = " + result);
                 if (result.length > 3){
-                    var text = (result[1] + " " + result[2]);
+                    var text = (result[0] + " " + result[1]);
                     $("#suburb").val(text);
                 } else {
                     $("#suburb").val(result[0]);
