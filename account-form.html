@@ -29,8 +29,9 @@
     <!-- Main content to be added in the content-box with JavaScript -->
     <section class="main">
         <section class="content-box" id="content-box">
-            <h1>Register</h1>
-            <h2><a href="sign-in.html">or Sign in</a></h2>
+            <h3>Register or login </h3>
+            <button type="button" class="sign-in">Log in</button>
+            
             <!-- Add your Dynamic HTML with Javascript below HERE -->
             <form action="action_page.php">
                 <div class="flex-container">
@@ -81,7 +82,7 @@
         $(document).ready(function () {
 
             $(document).on("click", ".registerbtn", ValidateForm);
-            //$(document).on("click", ".searchbtn", searchAddress);
+            $(document).on("click", ".sign-in", jumpToLogin);
             //$(document).on("keypress", "#address", searchAddress);
             //$(document).on("change", ".auto-complete-select", autoComplete);
 
@@ -90,9 +91,9 @@
             var keycount;
             var onselectlength;
 
-//            function autoComplete() {
- //               console.log("selected ");
-  //          }
+            function jumpToLogin() {
+                window.location.replace("sign-in.html");
+           }
 
             function ValidateForm() {
 
@@ -108,6 +109,7 @@
                 //validate
                 if (ps1 !== ps2) {
                     alert("passwords do not match.");
+                    return;
                 }
                 if (ps1.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/g)) {
                     console.log("password passed match.");
@@ -131,6 +133,7 @@
                 cuser.email = email;
                 cuser.epoch = Date.now();
                 store(email);
+                window.location.replace("menu.html");
             }
 
             function store(label) {

@@ -29,18 +29,19 @@
     <!-- Main content to be added in the content-box with JavaScript -->
     <section class="main">
         <section class="content-box flex-container" id="content-box">
-            <h1>Log in</h1>
-            <h2><a href="account-form.html">or Create an Account</a></h2>
+            <h3>login or Create an Account</h3>
+            <br>
+            <button type="button" class="sign-in">Create Account</button>
             <!-- Add your Dynamic HTML with Javascript below HERE -->
            <!-- <form class="flex-container">-->
                 <div class="flex-container">
 
                     <label for="Name"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" id="email" class="formrow" equired>
+                    <br>
 
                     <input type="password" placeholder="Password" name="psw" id="psw" class="formrow">
-                    <hr>
-
+                    <br>
                     <button type="button" class="registerbtn">Log in</button>
                 </div>
         </section>
@@ -51,9 +52,13 @@
         $(document).ready(function () {
 
             $(document).on("click", ".registerbtn", ValidatePassword);
+            $(document).on("click", ".sign-in", jumpToLogin);
             var cuser = {};
             var pword;
 
+            function jumpToLogin() {
+                window.location.replace("account-form.html");
+           }
             function ValidatePassword() {
 
                 var ps1 = $("#psw").val();
@@ -75,6 +80,7 @@
                         cuser.email = email;
                         cuser.epoch = now = Date.now();
                         store();
+                        window.location.replace("menu.html");
                     }
                 }
             }
