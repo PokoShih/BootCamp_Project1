@@ -51,16 +51,9 @@ input0.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('Cheeseburger');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
         
@@ -75,18 +68,12 @@ input1.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('Lot Burger');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        
     }
 })
 
@@ -98,16 +85,9 @@ input2.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('FriedChickenBurger1');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
     }
@@ -121,16 +101,9 @@ input3.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('FriedChickenBurger2');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
     }
@@ -144,16 +117,9 @@ input4.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('VeganBurger');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
     }
@@ -167,16 +133,9 @@ input5.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('Chips');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
     }
@@ -190,16 +149,9 @@ input6.on("keyup", function (event) {
         console.log(quantity, whatBurger);
         localStorage.setItem(whatBurger, quantity);
         // var cat = localStorage.getItem();
-        // console.log(cat);
-
-
-        var burgersQuantity = { 'burgers': whatBurger, 'quantity': quantity };
-
-        // Put the object into storage
-        localStorage.setItem('burgersQuantity', JSON.stringify(burgersQuantity));
 
         // Retrieve the object from storage
-        var retrievedObject = localStorage.getItem('burgersQuantity');
+        var retrievedObject = localStorage.getItem('SoftDrink');
 
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
     }
